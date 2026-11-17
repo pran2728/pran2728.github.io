@@ -1,0 +1,1336 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Pranathi Josyula — Product Manager, AI &amp; Enterprise SaaS</title>
+<meta name="description" content="Pranathi Josyula, Product Manager with 6+ years and an IIT Madras MBA. Enterprise SaaS, AI and data products, fintech and customer engagement on GRAVTY: 50+ enterprise brands, 500M+ members.">
+<meta property="og:title" content="Pranathi Josyula — Product Manager, AI & Enterprise SaaS">
+<meta property="og:description" content="Ambitious products deserve a PM who ships. 16 products, one boarding pass each.">
+<meta property="og:type" content="website">
+<meta name="theme-color" content="#0B0C0F">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%230B0C0F'/%3E%3Ctext x='32' y='43' font-family='monospace' font-weight='700' font-size='30' text-anchor='middle' fill='%23FFC83D'%3EPJ%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@500;700&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#0B0C0F; --panel:#0F1013; --panel2:#14161A; --line:#1E2026; --line2:#2A2D34;
+  --ink:#F2EFE6; --muted:#A4A7AE; --dim:#8B8F98;
+  --accent:#FFC83D; --paper:#F4EFE3; --paper2:#EAE3D3; --paperline:#DDD5C3; --pink:#FF9EC0;
+  --display:'Space Grotesk',system-ui,sans-serif; --body:Inter,system-ui,sans-serif; --mono:'JetBrains Mono',ui-monospace,monospace;
+}
+*{box-sizing:border-box}
+[hidden]{display:none!important}
+html{scroll-behavior:smooth;scroll-padding-top:76px}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--body);-webkit-font-smoothing:antialiased}
+a{color:var(--ink)}
+img{max-width:100%;display:block}
+.wrap{max-width:1280px;margin:0 auto;padding:0 32px}
+.mono{font-family:var(--mono)}
+.lbl{font-family:var(--mono);font-size:11px;letter-spacing:.14em;text-transform:uppercase}
+.h2{margin:0;font-family:var(--display);font-weight:700;font-size:clamp(32px,3.6vw,52px);letter-spacing:-.02em;line-height:1.05}
+.skip{position:absolute;left:-999px;top:8px;background:var(--ink);color:var(--bg);padding:10px 14px;border-radius:8px;z-index:100}
+.skip:focus{left:8px}
+:focus-visible{outline:2px solid var(--accent);outline-offset:3px}
+section{position:relative}
+.sec{padding:88px 0}
+.bt{border-top:1px solid var(--line)}
+
+/* Header: boarding-pass strip */
+.top{position:relative;z-index:30;padding:14px 0}
+.ticket{position:relative;display:flex;align-items:center;gap:20px 28px;padding:10px 12px 10px 20px;border:1px solid var(--line2);border-radius:14px;background:var(--panel);overflow:hidden}
+.pax{flex:0 0 auto;display:flex;flex-direction:column;gap:3px}
+.pax-l{display:flex;align-items:center;gap:12px}
+.pax-l .lbl{color:var(--dim);font-size:10px}
+.paxname{font:700 19px var(--display);letter-spacing:.03em;text-decoration:none;color:var(--ink)}
+.avail{display:inline-flex;align-items:center;gap:7px;font:700 10px var(--mono);letter-spacing:.12em;color:#7CE38B;text-transform:uppercase}
+.live{width:8px;height:8px;border-radius:50%;background:#7CE38B;display:block;flex:0 0 auto;animation:live 1.8s ease-out infinite}
+@keyframes live{0%{box-shadow:0 0 0 0 rgba(124,227,139,.65)}100%{box-shadow:0 0 0 9px rgba(124,227,139,0)}}
+.gates{flex:1 1 auto;min-width:0}
+.gates ul{display:flex;justify-content:center;gap:22px;list-style:none;margin:0;padding:0}
+.gate{display:flex;flex-direction:column;gap:5px;text-decoration:none;color:var(--ink);padding:4px 2px}
+.gate small{font:500 9px var(--mono);letter-spacing:.14em;color:var(--dim);display:flex;align-items:center;gap:5px}
+.gate.active small{color:var(--accent)}
+.gate.active small::before{content:"";width:6px;height:6px;border-radius:50%;background:var(--accent);animation:blink 1.1s steps(2,end) infinite}
+.gate.active .t{color:var(--accent)}
+.gate:hover .t{background:linear-gradient(#272A31 50%,#202228 50%)}
+.tiles{display:inline-flex;gap:2px}
+.t{display:inline-flex;align-items:center;justify-content:center;width:12px;height:18px;background:linear-gradient(#1E2026 50%,#181A1F 50%);font:700 11px/1 var(--mono);border-radius:2px;position:relative;color:var(--ink);transition:color .3s}
+.t::after{content:"";position:absolute;left:0;right:0;top:50%;height:1px;background:#08090B}
+.t.flip{opacity:.55}
+.stub2{flex:0 0 auto;align-self:stretch;position:relative;display:flex;flex-direction:column;justify-content:center;gap:7px;padding-left:22px;margin-left:4px;border-left:2px dashed var(--line2)}
+.stub2::before,.stub2::after{content:"";position:absolute;left:-10px;width:18px;height:18px;border-radius:50%;background:var(--bg);border:1px solid var(--line2)}
+.stub2::before{top:-21px}.stub2::after{bottom:-21px}
+.now{display:flex;align-items:center;gap:10px}
+.now .lbl{font-size:9px;color:var(--dim);white-space:nowrap}
+.now .t{color:var(--accent)}
+.miles{display:flex;align-items:center;gap:10px;color:var(--ink);text-decoration:none}
+.tierchip{display:inline-flex;align-items:center;height:22px;padding:0 9px;border-radius:999px;font:700 10px var(--mono);letter-spacing:.12em;color:#0B0C0F;background:#8AB4FF;transition:background .4s}
+.miles .n{font:700 12px var(--mono);white-space:nowrap}.miles .n small{color:var(--dim);font-weight:500;font-size:12px}
+.bar{width:56px;height:4px;border-radius:4px;background:#24262C;overflow:hidden;display:block}
+.bar i{display:block;height:100%;width:0;background:#8AB4FF;transition:width .6s cubic-bezier(.2,.8,.2,1),background .4s}
+.menubtn{display:none;align-items:center;justify-content:center;gap:8px;min-width:48px;height:44px;padding:0 14px;border-radius:999px;border:1px solid #3A3D45;background:transparent;color:var(--ink);font:700 11px var(--mono);letter-spacing:.12em;cursor:pointer}
+.menubtn:hover{background:#1B1D23}
+
+/* Shrunk header: floating pill */
+.pnav{position:fixed;top:12px;left:50%;z-index:40;display:flex;align-items:center;gap:14px;padding:6px 6px 6px 8px;border:1px solid var(--line2);border-radius:999px;background:rgba(18,20,24,.94);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);box-shadow:0 12px 30px rgba(0,0,0,.45);transform:translate(-50%,-160%);opacity:0;visibility:hidden;transition:transform .45s cubic-bezier(.2,.8,.2,1),opacity .3s,visibility 0s .45s;overflow:hidden}
+.pnav.show{transform:translate(-50%,0);opacity:1;visibility:visible;transition:transform .45s cubic-bezier(.2,.8,.2,1),opacity .3s}
+.pn-mono{position:relative;display:inline-flex;align-items:center;justify-content:center;width:36px;height:36px;border-radius:50%;background:#1B1D23;font:700 12px var(--mono);color:var(--accent);text-decoration:none;flex:0 0 auto}
+.pn-mono img{width:100%;height:100%;border-radius:50%;object-fit:cover;display:block}
+.pn-mono .live{position:absolute;right:0;top:0;width:9px;height:9px;border:2px solid #121418}
+.pnav .now .lbl{display:inline}
+.pnav .menubtn{display:inline-flex;height:36px;min-width:36px;padding:0 14px;background:var(--accent);border-color:var(--accent);color:#0B0C0F}
+.pnav .menubtn:hover{background:#FFD76A}
+.pnav .hpath{display:block}
+
+/* Hero */
+.hero{padding:96px 0 56px}
+.eyebrow{display:flex;align-items:center;gap:12px;flex-wrap:wrap;margin-bottom:28px;font:500 13px var(--mono);letter-spacing:.18em}
+.eyebrow .a{color:var(--accent)}.eyebrow .d{color:var(--dim)}
+h1{margin:0;font-family:var(--display);font-weight:700;font-size:clamp(44px,6.6vw,104px);line-height:.98;letter-spacing:-.035em;max-width:1150px}
+h1 em{font-style:normal;color:var(--accent)}
+.lede{margin:32px 0 0;max-width:660px;font-size:19px;line-height:1.55;color:var(--muted)}
+.ctas{display:flex;gap:12px;margin-top:36px;flex-wrap:wrap}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:48px;padding:0 22px;border-radius:999px;font:600 15px var(--body);text-decoration:none;border:1px solid #3A3D45;color:var(--ink);background:transparent;cursor:pointer}
+.btn:hover{background:#1B1D23}
+.btn.solid{background:var(--ink);color:var(--bg);border-color:var(--ink)}
+.btn.solid:hover{background:#fff}
+.btn.ink{color:#17181B;border-color:#17181B}.btn.ink:hover{background:#17181B;color:var(--paper)}
+
+/* Credentials */
+.creds{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:1px;background:var(--line);border:1px solid var(--line);border-radius:14px;overflow:hidden;margin:0 0 48px}
+.creds div{background:var(--bg);padding:22px 24px}.creds .lbl{color:var(--dim)}.creds p{margin:8px 0 0;font-weight:600}
+
+/* Ticker */
+.tick{border-top:1px solid var(--line);border-bottom:1px solid var(--line);padding:22px 0;overflow:hidden}
+.track{display:flex;width:max-content;gap:56px;animation:marquee 34s linear infinite}
+.track span{display:inline-flex;align-items:center;gap:56px;font:500 22px var(--display);color:var(--dim);white-space:nowrap}
+.track span::after{content:"✦";color:#3A3D45}
+@keyframes marquee{to{transform:translateX(-50%)}}
+
+/* Flights */
+.sechead{display:flex;justify-content:space-between;align-items:flex-end;gap:20px;flex-wrap:wrap;margin-bottom:28px}
+.sechead .lbl{color:var(--dim)}
+.hint{display:inline-flex;align-items:center;gap:10px;padding:10px 16px;border-radius:999px;background:#1B1D23;font-size:14px}
+.hint .dot{background:var(--accent);animation:ping 1.6s ease-out infinite}
+@keyframes ping{0%{box-shadow:0 0 0 0 rgba(255,200,61,.6)}100%{box-shadow:0 0 0 10px rgba(255,200,61,0)}}
+.flights{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:12px}
+.frow{display:flex;flex-wrap:wrap;align-items:center;gap:18px 28px;width:100%;padding:22px 24px;border:1px solid var(--line);background:var(--panel);border-radius:16px;cursor:pointer;color:var(--ink);font:inherit;text-align:left;transition:transform .2s,border-color .2s,background .2s}
+.frow:hover{transform:translateY(-2px);border-color:#3A3D45;background:var(--panel2)}
+.frow.hera{border-color:#4A2333;background:#140F12}.frow.hera:hover{border-color:#7A3A55;background:#1A1216}
+.code{display:flex;gap:3px;color:var(--accent);flex:0 0 auto}
+.flap{display:inline-flex;align-items:center;justify-content:center;width:22px;height:32px;background:linear-gradient(#1E2026 50%,#181A1F 50%);font:700 19px/1 var(--mono);border-radius:3px;position:relative;box-shadow:0 1px 0 #000}
+.flap::after{content:"";position:absolute;left:0;right:0;top:50%;height:1px;background:#08090B}
+.flap.flip{opacity:.5}
+.fmain{flex:1 1 280px;min-width:0}
+.ftitle{display:block;font:700 24px var(--display);letter-spacing:-.01em}
+.fsub{display:block;margin-top:4px;font-size:14px;color:var(--muted);line-height:1.45}
+.fmetric{flex:0 0 150px}
+.fv{display:block;font:700 26px var(--display)}
+.fl{display:block;font-size:13px;color:var(--dim);margin-top:2px}
+.pill{display:inline-flex;align-items:center;gap:8px;height:30px;padding:0 12px;border-radius:999px;font:700 11px var(--mono);letter-spacing:.12em;white-space:nowrap}
+.dot{width:7px;height:7px;border-radius:50%;background:currentColor;display:block;flex:0 0 auto}
+.pill.landed{background:#14261A;color:#7CE38B}
+.pill.viewed{background:#1B1D23;color:var(--muted)}
+.pill.boarding{background:#2A2210;color:#FFC83D}.pill.boarding .dot{animation:blink 1.1s steps(2,end) infinite}
+.pill.solo{background:#2A1520;color:var(--pink)}
+@keyframes blink{50%{opacity:.25}}
+.cta{display:inline-flex;align-items:center;gap:8px;height:44px;padding:0 18px;border-radius:999px;border:1.5px solid var(--accent);font:600 14px var(--body);color:var(--ink);transition:background .2s,color .2s}
+.frow:hover .cta{background:var(--accent);color:#0B0C0F}
+.frow.hera .cta{border-color:var(--pink)}.frow.hera:hover .cta{background:var(--pink)}
+.note{margin:18px 0 0;font:500 13px var(--mono);color:var(--dim);letter-spacing:.04em}
+.note button{background:none;border:0;padding:0;color:var(--muted);font:inherit;text-decoration:underline;cursor:pointer}
+
+/* Passport */
+.prow{display:flex;flex-wrap:wrap;gap:24px;margin-top:44px}
+.passport{flex:999 1 620px;min-width:0;background:var(--paper);color:#17181B;border-radius:18px;padding:28px;overflow:hidden}
+.passport .lbl{color:#5A5C63}
+.photo{width:132px;height:164px;border:2px dashed #A79E89;border-radius:10px;display:flex;align-items:center;justify-content:center;text-align:center;font-size:12px;color:#5A5C63;padding:10px;flex:0 0 auto;overflow:hidden}
+.photo img{width:100%;height:100%;object-fit:cover;border-radius:8px}
+.photo.has{border:0;padding:0}
+.photo.mono{border:2px solid #C9C1AE;background:var(--paper2);font:700 46px var(--display);letter-spacing:-.02em;color:#9A3412}
+.fields{display:flex;flex-direction:column;gap:12px}.fields p{margin:3px 0 0;font-weight:600}
+.stamps{display:flex;flex-wrap:wrap;gap:14px;align-items:center}
+.stamp{display:inline-flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:12px 16px;border:2.5px solid currentColor;border-radius:12px;font-family:var(--mono);font-weight:700;letter-spacing:.08em;line-height:1.3;mix-blend-mode:multiply;opacity:0;transform:scale(1.6) rotate(var(--r));transition:opacity .25s, transform .35s cubic-bezier(.3,1.6,.5,1)}
+.stamp.in{opacity:1;transform:scale(1) rotate(var(--r))}
+.stamp.round{border-radius:50%;width:132px;height:132px;padding:12px}
+.stamp small{font-size:10px;opacity:.85}.stamp span{font-size:13px;margin-top:2px}.stamp b{font-size:15px;margin-top:2px}
+.mrz{margin-top:26px;padding-top:14px;border-top:1px solid var(--paperline);font:500 14px var(--mono);letter-spacing:.18em;color:#5A5C63;white-space:nowrap;overflow:hidden}
+.race{flex:1 1 340px;min-width:0;background:var(--panel2);border:1px solid var(--line);border-radius:18px;padding:36px 32px;display:flex;flex-direction:column;gap:26px}
+.bib{background:#FBFAF6;color:#17181B;border-radius:14px;position:relative;overflow:hidden;box-shadow:0 18px 40px rgba(0,0,0,.35);transform:rotate(-2deg)}
+.bib .band{background:var(--accent);color:#0B0C0F;padding:12px 40px;text-align:center;font:700 13px var(--mono);letter-spacing:.16em}
+.bib .num{padding:18px 40px 26px;text-align:center}
+.bib .num b{display:block;font:700 84px/1 var(--display);letter-spacing:-.03em}
+.pin{position:absolute;width:12px;height:12px;border-radius:50%;background:var(--bg);box-shadow:inset 0 0 0 3px #C9C1AE}
+.rstats{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}.rstats .lbl{color:var(--dim)}.rstats p{margin:4px 0 0;font-weight:600}
+.art{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:40px;margin-top:36px;padding:0 6px}
+.art figure{margin:0}
+.frame{background:var(--ink);padding:14px;border-radius:4px;box-shadow:0 0 0 6px #2A2420,0 20px 40px rgba(0,0,0,.45)}
+.frame .ph{aspect-ratio:4/5;border:2px dashed #A79E89;display:flex;align-items:center;justify-content:center;text-align:center;padding:16px;font-size:13px;color:#5A5C63;background:var(--paper2)}
+.frame img{aspect-ratio:4/5;width:100%;object-fit:cover}
+.art figcaption{margin-top:16px;font:500 12px var(--mono);letter-spacing:.1em;color:var(--dim)}
+
+/* Locked sections */
+.lockable{position:relative}
+.lockable .inner{transition:filter .5s, opacity .5s}
+.lockable.locked .inner{filter:blur(7px);opacity:.45;pointer-events:none;user-select:none}
+.lockcard{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;z-index:2;padding:24px}
+.lockable:not(.locked) .lockcard{display:none}
+.lockcard div{background:#16181D;border:1px solid var(--line2);border-radius:16px;padding:24px 28px;max-width:440px;text-align:center;box-shadow:0 20px 50px rgba(0,0,0,.5)}
+.lockcard p{margin:10px 0 0;color:var(--muted);font-size:15px;line-height:1.5}
+.lockcard .btn{margin-top:16px}
+.steps{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:16px;margin-top:40px;list-style:none;padding:0}
+.steps li{background:var(--panel);border:1px solid var(--line);border-radius:16px;padding:26px 24px}
+.steps .n{font:700 13px var(--mono);color:var(--accent);letter-spacing:.12em}
+.steps h3{margin:12px 0 0;font:700 22px var(--display)}
+.steps p{margin:10px 0 0;color:var(--muted);line-height:1.55;font-size:15px}
+.team{margin-top:16px;padding:22px 24px;border-radius:16px;border:1px dashed var(--line2);color:var(--muted);line-height:1.6}
+.team b{color:var(--ink)}
+.quotes{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:16px;margin-top:40px}
+.quotes blockquote{margin:0;background:var(--panel);border:1px solid var(--line);border-radius:16px;padding:26px 24px}
+.quotes p{margin:0;font:500 19px/1.45 var(--display)}
+.quotes cite{display:block;margin-top:16px;font:normal 500 12px var(--mono);letter-spacing:.1em;color:var(--dim)}
+
+/* Rewards */
+.tiers{display:flex;gap:12px;flex-wrap:wrap}
+.tier{flex:1 1 180px;padding:14px 16px;border-radius:12px;border:1px solid var(--line2);color:var(--dim)}
+.tier.on{border-color:transparent;background:#1B1D23;color:var(--ink)}
+.tier .tier-h{display:flex;align-items:center;gap:10px}.tier .tier-h i{width:12px;height:12px;border-radius:50%;display:block}
+.tier p{margin:8px 0 0;font-size:14px}
+.plat{margin-top:18px;padding:22px 24px;border-radius:14px;background:#1B1D23;display:none;justify-content:space-between;align-items:center;gap:16px;flex-wrap:wrap}
+.plat.show{display:flex;animation:rise .5s ease-out}
+@keyframes rise{from{opacity:0;transform:translateY(10px)}}
+
+/* Contact */
+.final{padding-top:96px;padding-bottom:72px}
+.final .a{font:500 13px var(--mono);letter-spacing:.18em;color:var(--accent)}
+.final h2{margin:18px 0 0;font:700 clamp(40px,5.4vw,84px)/1 var(--display);letter-spacing:-.03em}
+.contactline{margin-top:20px;font:500 14px var(--mono);color:var(--muted)}
+.foot{margin-top:80px;display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;font:500 12px var(--mono);letter-spacing:.12em;color:var(--dim)}
+
+/* Boarding pass dialog */
+dialog.passdlg{border:0;padding:0;background:transparent;max-width:min(1040px,calc(100% - 32px));width:100%;max-height:calc(100% - 32px);overflow:visible;color:#17181B}
+dialog.passdlg::backdrop{background:rgba(5,6,8,.8);animation:fade .25s ease-out}
+@keyframes fade{from{opacity:0}}
+.pass{display:flex;flex-wrap:wrap;background:transparent;overflow-x:hidden;overflow-y:auto;max-height:calc(100vh - 32px);padding:0 14px 14px 0;filter:drop-shadow(0 26px 50px rgba(0,0,0,.5));animation:print .7s cubic-bezier(.2,.8,.2,1)}
+@keyframes print{from{clip-path:inset(0 0 100% 0);transform:translateY(-36px)}to{clip-path:inset(0 0 0 0);transform:none}}
+.pmain{flex:999 1 560px;min-width:0;padding:32px 36px;background:var(--paper);border-radius:18px 0 0 18px;position:relative}
+.pmain.thud{animation:thud .28s ease-out .98s}
+@keyframes thud{30%{transform:translate(1px,2px)}60%{transform:translate(-1px,-1px)}}
+.boarded{position:absolute;top:64px;right:34px;z-index:3;display:flex;flex-direction:column;align-items:center;gap:2px;padding:10px 18px;border:3px double #B91C1C;border-radius:10px;color:#B91C1C;font-family:var(--mono);transform:rotate(-12deg);mix-blend-mode:multiply;opacity:0;pointer-events:none}
+.boarded b{font-size:26px;letter-spacing:.16em}
+.boarded small{font-size:10px;letter-spacing:.14em;font-weight:700}
+.boarded.show{opacity:.88}
+.boarded.slam{animation:slam .42s cubic-bezier(.2,.8,.3,1.25) .62s both}
+@keyframes slam{0%{opacity:0;transform:rotate(-12deg) scale(2.6)}70%{opacity:.95;transform:rotate(-12deg) scale(.93)}100%{opacity:.88;transform:rotate(-12deg) scale(1)}}
+.pmain .lbl{color:#5A5C63}.pmain .lbl.r{color:#9A3412;font-weight:700}
+.ptop{display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap}
+.ptop b{font:700 18px var(--display);letter-spacing:.04em}
+.route{display:flex;align-items:center;gap:22px;margin-top:28px;flex-wrap:wrap}
+.route p{margin:4px 0 0;font:700 clamp(26px,3vw,40px) var(--display);letter-spacing:-.02em}
+.pfields{display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:16px;margin-top:26px;padding:16px 0;border-top:1px solid var(--paperline);border-bottom:1px solid var(--paperline)}
+.pfields p{margin:4px 0 0;font-weight:600}
+.story{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:24px;margin-top:22px}
+.story p{margin:8px 0 0;font-size:15px;line-height:1.55}
+.pmetrics{display:flex;gap:12px;margin-top:24px;flex-wrap:wrap}
+.pmetrics div{flex:1 1 160px;background:var(--paper2);border-radius:12px;padding:16px 18px}
+.pmetrics b{display:block;font:700 28px var(--display);letter-spacing:-.02em}
+.pmetrics span{display:block;margin-top:4px;font-size:13px;color:#4A4C52}
+.stub{flex:1 1 240px;border-left:2px dashed #C9C1AE;padding:32px 28px;display:flex;flex-direction:column;gap:18px;justify-content:space-between;background:var(--paper);border-radius:0 18px 18px 0;transform-origin:0 100%}
+.pass.torn .stub{transform:translate(10px,6px) rotate(1.4deg)}
+.pass.tearing .stub{transition:transform .55s cubic-bezier(.3,1.4,.5,1) 1.15s}
+.stub .lbl{color:#5A5C63}
+.stub .no{font:700 30px var(--mono);margin-top:4px}
+.earn{background:#17181B;color:var(--paper);border-radius:12px;padding:16px 18px}
+.earn .lbl{color:#C9C1AE}.earn p{margin:4px 0 0;font:700 22px var(--mono)}
+.barcode{height:64px;background:repeating-linear-gradient(90deg,#17181B 0 2px,transparent 2px 4px,#17181B 4px 7px,transparent 7px 9px,#17181B 9px 10px,transparent 10px 13px);border-radius:2px}
+.passnav{display:flex;gap:8px}
+.passnav .btn{flex:1;min-height:44px;padding:0 12px;font-size:14px}
+
+/* Headline flip */
+.flaph{perspective:900px}
+.flaph .w{display:inline-block;transform-origin:50% 0;animation:flapIn .75s cubic-bezier(.2,.9,.25,1.15) both;animation-delay:calc(var(--i) * 110ms + .15s)}
+@keyframes flapIn{0%{transform:rotateX(-95deg);opacity:0}55%{transform:rotateX(14deg);opacity:1}80%{transform:rotateX(-5deg)}100%{transform:none}}
+
+/* Tilt + shine */
+.frow,.passport,.frame{position:relative}
+.frow{overflow:hidden}
+.frame{overflow:hidden}
+.passport,.bib,.frame{--shine:rgba(255,255,255,.55)}
+.shine{position:absolute;inset:0;pointer-events:none;border-radius:inherit;background:radial-gradient(circle at var(--mx,50%) var(--my,50%),var(--shine,rgba(255,255,255,.12)),transparent 45%);opacity:0;transition:opacity .3s;z-index:1}
+.tilting .shine{opacity:1}
+
+/* Flight path (desktop) */
+.fp{position:fixed;right:26px;top:118px;bottom:58px;width:22px;z-index:25;display:none}
+.fp-line{position:absolute;left:10px;top:0;bottom:0;border-left:2px dashed #2A2D34}
+.fp-done{position:absolute;left:10px;top:0;width:2px;height:0;background:var(--accent)}
+.fp-cap{position:absolute;left:11px;transform:translateX(-50%);font:700 10px var(--mono);letter-spacing:.14em;color:var(--dim)}
+.fp-wp{position:absolute;left:5px;transform:translateY(-50%);display:flex;align-items:center;text-decoration:none}
+.fp-wp i{width:12px;height:12px;border-radius:50%;background:var(--bg);border:2px solid #3A3D45;display:block;transition:background .3s,border-color .3s}
+.fp-wp.reached i{background:var(--accent);border-color:var(--accent)}
+.fp-wp span{position:absolute;right:22px;white-space:nowrap;font:500 11px var(--mono);letter-spacing:.12em;text-transform:uppercase;color:var(--muted);background:var(--bg);padding:3px 6px;border-radius:4px;opacity:0;transform:translateX(6px);transition:opacity .25s,transform .25s}
+.fp-wp:hover span,.fp-wp.near span{opacity:1;transform:none}
+.fp-plane{position:absolute;left:-1px;top:0;width:24px;height:24px;margin-top:-12px;color:var(--accent);filter:drop-shadow(0 0 8px rgba(255,200,61,.55));transition:color .3s}
+.fp-plane svg{transform:rotate(135deg);display:block}
+.fp.landed .fp-plane{color:#7CE38B;filter:drop-shadow(0 0 8px rgba(124,227,139,.55))}
+/* Flight path (header strip, smaller screens) */
+.hpath{position:absolute;left:18px;right:18px;bottom:0;height:2px;pointer-events:none}
+.hpath .hdone{height:2px;width:0;background:var(--accent)}
+.hpath .hplane{position:absolute;top:50%;left:0;width:18px;height:18px;margin:-9px 0 0 -9px;color:var(--accent)}
+.hpath .hplane svg{transform:rotate(45deg);display:block}
+@media (min-width:1400px){.fp{display:block}.hpath,.pnav .hpath{display:none}}
+
+/* Departures-board menu */
+dialog.boardmenu{border:0;padding:0;margin:0;width:100%;height:100%;max-width:none;max-height:none;background:var(--bg);color:var(--ink);overflow-y:auto}
+dialog.boardmenu::backdrop{background:transparent}
+dialog.boardmenu[open]{animation:fade .25s ease-out}
+.bm-inner{max-width:1100px;margin:0 auto;padding:36px 32px 40px;min-height:100%;display:flex;flex-direction:column;gap:28px}
+.bm-top{display:flex;justify-content:space-between;align-items:center;gap:16px}
+.bm-top h2{margin:6px 0 0;font:700 clamp(28px,3.4vw,44px) var(--display);letter-spacing:-.02em}
+.bm-close{width:52px;height:52px;border-radius:50%;border:1px solid #3A3D45;background:transparent;color:var(--ink);cursor:pointer;display:inline-flex;align-items:center;justify-content:center;flex:0 0 auto}
+.bm-close:hover{background:#1B1D23}
+.bm-head,.bm-row{display:grid;grid-template-columns:96px minmax(0,1fr) 110px 150px;align-items:center;gap:16px}
+.bm-head{padding:0 16px 10px;border-bottom:1px solid var(--line);font:500 11px var(--mono);letter-spacing:.14em;color:var(--dim)}
+.bm-list{list-style:none;margin:0;padding:0}
+.bm-row{padding:18px 16px;border-bottom:1px solid var(--line);text-decoration:none;color:var(--ink);border-radius:10px;transition:background .2s}
+.bm-row:hover{background:var(--panel2)}
+.bm-row .t{width:26px;height:38px;font-size:22px;border-radius:3px}
+.bm-fl,.bm-gate{font:700 14px var(--mono);color:var(--muted)}
+.bm-st{justify-self:start;display:inline-flex;align-items:center;gap:8px;height:30px;padding:0 12px;border-radius:999px;font:700 11px var(--mono);letter-spacing:.12em;background:#14261A;color:#7CE38B}
+.bm-st.here{background:#2A2210;color:var(--accent)}.bm-st.here .dot{animation:blink 1.1s steps(2,end) infinite}
+.bm-st.locked{background:#1B1D23;color:var(--dim)}
+.bm-st.final{background:#2A1520;color:var(--pink)}
+.bm-foot{margin-top:auto;display:flex;justify-content:space-between;align-items:center;gap:16px;flex-wrap:wrap;padding-top:20px}
+.bm-foot .avail{font-size:12px}
+
+/* Impact strip */
+.impact{list-style:none;margin:36px 0 0;padding:0;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:1px;background:var(--line);border:1px solid var(--line);border-radius:16px;overflow:hidden}
+.impact li{background:var(--bg);padding:24px 24px 26px}
+.impact b{display:block;font:700 clamp(36px,3.6vw,48px)/1 var(--display);letter-spacing:-.03em;color:var(--accent)}
+.impact span{display:block;margin-top:10px;font-size:14px;line-height:1.45;color:var(--muted)}
+
+@media (max-width:900px){.impact{grid-template-columns:repeat(2,minmax(0,1fr))}.impact li{padding:20px 18px}}
+@media (max-width:600px){#work .filters{flex-wrap:nowrap;overflow-x:auto;scrollbar-width:none;margin:0 -20px 18px;padding:0 20px}#work .filters::-webkit-scrollbar{display:none}#work .fbtn{flex:0 0 auto}}
+
+/* Filters */
+.filters{display:flex;flex-wrap:wrap;gap:8px;margin:0 0 22px}
+.fbtn{display:inline-flex;align-items:center;gap:8px;min-height:40px;padding:0 16px;border-radius:999px;border:1px solid var(--line2);background:transparent;color:var(--muted);font:600 14px var(--body);cursor:pointer}
+.fbtn small{font:700 11px var(--mono);color:var(--dim)}
+.fbtn:hover{border-color:#3A3D45;color:var(--ink)}
+.fbtn[aria-pressed="true"]{background:var(--ink);border-color:var(--ink);color:var(--bg)}
+.fbtn[aria-pressed="true"] small{color:#5A5C63}
+
+/* Luggage tags */
+.tags{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:22px;margin-top:40px}
+.tag{position:relative;background:var(--paper);color:#17181B;border-radius:12px 12px 12px 12px;padding:30px 22px 22px;clip-path:polygon(18px 0,calc(100% - 18px) 0,100% 18px,100% 100%,0 100%,0 18px);--shine:rgba(255,255,255,.5)}
+.tag:nth-child(odd){transform:rotate(-1deg)}.tag:nth-child(even){transform:rotate(1deg)}
+.tag .hole{position:absolute;top:12px;left:50%;width:14px;height:14px;margin-left:-7px;border-radius:50%;background:var(--bg);box-shadow:inset 0 0 0 3px #C9C1AE}
+.tag .lbl{color:#9A3412;font-weight:700;text-align:center;margin-top:6px}
+.tag ul{list-style:none;margin:14px 0 0;padding:0;display:flex;flex-wrap:wrap;gap:6px;justify-content:center}
+.tag li{font-size:13px;font-weight:500;background:var(--paper2);border-radius:999px;padding:5px 10px}
+
+/* Toast */
+.toast{position:fixed;left:50%;bottom:28px;transform:translate(-50%,20px);opacity:0;z-index:60;background:var(--ink);color:var(--bg);padding:14px 20px;border-radius:18px;font:700 14px var(--mono);letter-spacing:.06em;box-shadow:0 12px 30px rgba(0,0,0,.4);transition:opacity .3s, transform .3s;pointer-events:none;width:max-content;max-width:calc(100% - 32px);text-align:center}
+.toast.show{opacity:1;transform:translate(-50%,0)}
+
+@media (max-width:1180px){.ticket{flex-wrap:wrap}.top .now{display:none}.stub2{margin-left:auto}.stub2::before,.stub2::after{display:none}.gates{order:3;flex:1 1 100%;border-top:1px dashed var(--line2);padding-top:10px}.gates ul{justify-content:space-between}}
+@media (max-width:600px){.top .stub2{display:none}.gates ul{justify-content:flex-start;gap:20px;overflow-x:auto;scrollbar-width:none;-webkit-mask-image:linear-gradient(90deg,#000 80%,transparent);mask-image:linear-gradient(90deg,#000 80%,transparent);padding-right:40px}.gates ul::-webkit-scrollbar{display:none}.bm-head{display:none}.bm-row{grid-template-columns:minmax(0,1fr) auto}.bm-fl,.bm-gate{display:none}.bm-row .t{width:18px;height:28px;font-size:15px}.pnav .now .lbl,.pnav .miles .n{display:none}.pnav .t{width:10px;height:16px;font-size:10px}.pnav{gap:10px}.bm-inner{padding:24px 18px 32px}}
+@media (max-width:760px){
+  .pass{padding:0 0 14px}
+  .pmain{border-radius:18px 18px 0 0}
+  .stub{border-radius:0 0 18px 18px;transform-origin:0 0}
+  .pass.torn .stub{transform:translate(0,10px) rotate(-1deg)}
+  .pass .pmain{padding-top:92px}
+  .boarded{top:18px;right:18px;padding:6px 12px}.boarded b{font-size:18px}
+  .wrap{padding:0 20px}.sec{padding:64px 0}.hero{padding:56px 0 40px}
+  .top{padding:10px 0}
+  .ticket{padding:10px 10px 10px 16px;gap:12px}
+  .paxname{font-size:16px}
+  .miles .bar{display:none}
+  .stub{border-left:0;border-top:2px dashed #C9C1AE}
+  .fmetric{flex:1 1 120px}.bib{transform:none}
+  .frow{padding:18px}.cta{width:100%;justify-content:center}
+  .pmain{padding:24px 22px}.stub{padding:24px 22px}
+  .bib .num b{font-size:64px}
+}
+@media (prefers-reduced-motion:reduce){
+  *,*::before,*::after{animation:none!important;transition:none!important}
+  html{scroll-behavior:auto}
+  .stamp{opacity:1;transform:rotate(var(--r))}
+}
+</style>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+
+<header class="top">
+  <div class="wrap">
+    <div class="ticket">
+      <div class="pax">
+        <div class="pax-l"><span class="lbl">Passenger</span><span class="avail"><i class="live"></i>Open to PM roles · HYD · BLR</span></div>
+        <a class="paxname" href="#main">PRANATHI JOSYULA</a>
+      </div>
+      <nav class="gates" aria-label="Main"><ul>
+        <li><a class="gate" href="#work" data-sec="work" data-label="GATE 01" aria-label="Work"><small>GATE 01</small><span class="tiles" data-word="WORK" aria-hidden="true"></span></a></li>
+        <li><a class="gate" href="#about" data-sec="about" data-label="GATE 02" aria-label="About"><small>GATE 02</small><span class="tiles" data-word="ABOUT" aria-hidden="true"></span></a></li>
+        <li><a class="gate" href="#how" data-sec="how" data-label="GATE 03" aria-label="How I think"><small>GATE 03</small><span class="tiles" data-word="HOW I THINK" aria-hidden="true"></span></a></li>
+        <li><a class="gate" href="#rewards" data-sec="rewards" data-label="GATE 04" aria-label="Rewards"><small>GATE 04</small><span class="tiles" data-word="REWARDS" aria-hidden="true"></span></a></li>
+        <li><a class="gate" href="#contact" data-sec="contact" data-label="GATE 05" aria-label="Contact"><small>GATE 05</small><span class="tiles" data-word="CONTACT" aria-hidden="true"></span></a></li>
+      </ul></nav>
+      <div class="stub2">
+        <div class="now" aria-hidden="true"><span class="lbl">Now at</span><span class="tiles nowat"></span></div>
+        <a class="miles" href="#rewards" aria-label="Pran Rewards status">
+          <span class="tierchip js-tier">BLUE</span>
+          <span class="n"><span class="js-miles">0</span> <small>MILES</small></span>
+          <span class="bar" aria-hidden="true"><i class="js-bar"></i></span>
+        </a>
+      </div>
+      <button type="button" class="menubtn js-menu" aria-haspopup="dialog" aria-label="Open menu"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h10"/></svg><span>GATES</span></button>
+    </div>
+  </div>
+</header>
+
+<div class="pnav" id="pnav" inert>
+  <a class="pn-mono" href="#main" aria-label="Back to top">PJ<i class="live"></i></a>
+  <div class="now" aria-hidden="true"><span class="lbl">Now at</span><span class="tiles nowat"></span></div>
+  <a class="miles" href="#rewards" aria-label="Pran Rewards status"><span class="tierchip js-tier">BLUE</span><span class="n"><span class="js-miles">0</span> <small>MI</small></span></a>
+  <button type="button" class="menubtn js-menu" aria-haspopup="dialog" aria-label="Open menu"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h10"/></svg><span>GATES</span></button>
+  <div class="hpath" aria-hidden="true"><div class="hdone"></div><span class="hplane"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M17.8 19.2 16 11l3.5-3.5C21 6 21.5 4 21 3c-1-.5-3 0-4.5 1.5L13 8 4.8 6.2c-.5-.1-.9.1-1.1.5l-.3.5c-.2.5-.1 1 .3 1.3L9 12l-2 3H4l-1 1 3 2 2 3 1-1v-3l3-2 3.5 5.3c.3.4.8.5 1.3.3l.5-.2c.4-.3.6-.7.5-1.2z"/></svg></span></div>
+</div>
+
+<dialog class="boardmenu" id="boardMenu" aria-label="Site menu">
+  <div class="bm-inner">
+    <div class="bm-top">
+      <div><div class="lbl" style="color:var(--dim)">Departures · local time <span class="js-clock">--:--</span></div><h2>Where to next?</h2></div>
+      <button type="button" class="bm-close" id="bmClose" aria-label="Close menu"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6 6 18"/></svg></button>
+    </div>
+    <div>
+      <div class="bm-head" aria-hidden="true"><span>FLIGHT</span><span>DESTINATION</span><span>GATE</span><span>STATUS</span></div>
+      <ol class="bm-list" id="bmList"></ol>
+    </div>
+    <div class="bm-foot">
+      <span class="avail"><i class="live"></i>Open to PM roles · Hyderabad · Bengaluru</span>
+      <a class="btn solid" data-link="email" href="#contact">Email me</a>
+    </div>
+  </div>
+</dialog>
+
+<div class="fp" id="fp" aria-hidden="true">
+  <span class="fp-cap" style="top:-24px">DEP</span>
+  <div class="fp-line"></div>
+  <div class="fp-done" id="fpDone"></div>
+  <span class="fp-plane" id="fpPlane"><svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M17.8 19.2 16 11l3.5-3.5C21 6 21.5 4 21 3c-1-.5-3 0-4.5 1.5L13 8 4.8 6.2c-.5-.1-.9.1-1.1.5l-.3.5c-.2.5-.1 1 .3 1.3L9 12l-2 3H4l-1 1 3 2 2 3 1-1v-3l3-2 3.5 5.3c.3.4.8.5 1.3.3l.5-.2c.4-.3.6-.7.5-1.2z"/></svg></span>
+  <span class="fp-cap" style="bottom:-24px">ARR</span>
+</div>
+
+<main id="main">
+  <section class="hero">
+    <div class="wrap">
+      <div class="eyebrow">
+        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="color:var(--accent)"><path d="M2 22h20"/><path d="M6.4 17.6 3 14l2-1 3.5 1.6L14 9 6 4.5 8 3.5l10 3.4 2.6-1.3a2 2 0 0 1 1.8 3.6L8.8 16.9a2 2 0 0 1-2.4.7Z"/></svg>
+        <span class="a">FINAL BOARDING CALL</span><span class="d">· HYD · BLR · LOCAL TIME <span id="clock">--:--</span></span>
+      </div>
+      <h1 class="flaph"><span class="w" style="--i:0">Ambitious</span> <span class="w" style="--i:1">products</span> <span class="w" style="--i:2">deserve</span> <span class="w" style="--i:3">a</span> <span class="w" style="--i:4">PM</span> <em><span class="w" style="--i:5">who</span> <span class="w" style="--i:6">ships.</span></em></h1>
+      <p class="lede">I'm Pranathi (Pran to friends), a Product Manager with 6+ years and an IIT Madras MBA. I turn recurring operational problems into platform products on GRAVTY, a loyalty platform used by 50+ enterprise brands and 500M+ programme members. Right now I'm building GenAI products. Marathoner and Artist when I'm off the clock.</p>
+      <div class="ctas">
+        <a class="btn solid" href="#work">See my work</a>
+        <a class="btn" href="#about">Meet Pran</a>
+      </div>
+    </div>
+  </section>
+
+  <div class="wrap">
+    <div class="creds" role="list" aria-label="Credentials">
+      <div role="listitem"><span class="lbl">Education</span><p>MBA, IIT Madras · CGPA 8.4, top 10%</p></div>
+      <div role="listitem"><span class="lbl">Product Management</span><p>10/10 · highest in batch</p></div>
+      <div role="listitem"><span class="lbl">Certified</span><p>PSPO I · PSPO-AI Essentials</p></div>
+      <div role="listitem"><span class="lbl">Recognised</span><p>TrailBlazer Award 2025</p><p style="margin-top:4px">Best Implementation Idea Award 2026</p></div>
+    </div>
+  </div>
+
+  <div class="tick" aria-label="Clients I've built for">
+    <div class="track" id="ticker"></div>
+  </div>
+
+  <section id="impact" class="sec" style="padding-bottom:0">
+    <div class="wrap">
+      <div class="lbl" style="color:var(--dim)">Flight log</div>
+      <h2 class="h2" style="margin-top:10px">Impact, in numbers.</h2>
+      <ul class="impact">
+        <li><b>11</b><span>enterprise clients adopted reconciliation as a licence revenue line</span></li>
+        <li><b>90%</b><span>faster loyalty analysis with natural-language insights</span></li>
+        <li><b>~85%</b><span>less offer-testing effort with agentic test workflows</span></li>
+        <li><b>95%</b><span>fewer offer configuration errors</span></li>
+        <li><b>60%</b><span>fewer defects across global launches</span></li>
+        <li><b>5</b><span>country launches in 12 months</span></li>
+        <li><b>125</b><span>platform optimisations shipped in 11 months</span></li>
+        <li><b>5M+</b><span>members served by a WhatsApp loyalty assistant</span></li>
+      </ul>
+    </div>
+  </section>
+
+  <section id="work" class="sec">
+    <div class="wrap">
+      <div class="sechead">
+        <div><div class="lbl">Departures · <span id="flightCount">08</span> products</div><h2 class="h2" style="margin-top:10px">The work, now boarding.</h2></div>
+        <div class="hint"><span class="dot"></span>Tap any flight to open its boarding pass</div>
+      </div>
+      <div class="filters" id="filters" role="group" aria-label="Filter the work"></div>
+      <ol class="flights" id="flights"></ol>
+      <p class="note">Each new pass earns 1,000 Pran Miles and unlocks more of this page. In a hurry? <button type="button" id="skipGame">Unlock everything</button></p>
+    </div>
+  </section>
+
+  <section id="about" class="sec bt">
+    <div class="wrap">
+      <div class="lbl" style="color:var(--dim)">Passenger profile</div>
+      <h2 class="h2" style="margin-top:10px;max-width:820px">Off the board, I run long distances and make art.</h2>
+      <div class="prow">
+        <div class="passport">
+          <div class="ptop"><b style="font-size:16px;letter-spacing:.08em">PRAN AIR · CAREER PASSPORT</b><span class="lbl">Pages 01–02</span></div>
+          <div style="display:flex;flex-wrap:wrap;gap:28px;margin-top:22px">
+            <div style="display:flex;gap:20px;flex:1 1 300px;min-width:0">
+              <div class="photo" id="photo">Your photo here</div>
+              <div class="fields">
+                <div><span class="lbl">Name</span><p>Pranathi Josyula · “Pran”</p></div>
+                <div><span class="lbl">Profession</span><p>Product Manager</p></div>
+                <div><span class="lbl">Home base</span><p>Hyderabad</p></div>
+                <div><span class="lbl">Open to</span><p>Hyderabad · Bengaluru</p></div>
+                <div><span class="lbl">Also</span><p>Marathoner · Artist</p></div>
+              </div>
+            </div>
+            <div style="flex:1 1 320px;min-width:0">
+              <div class="lbl" style="margin-bottom:14px">Visas stamped</div>
+              <div class="stamps" id="stamps"></div>
+            </div>
+          </div>
+          <div class="mrz" aria-hidden="true">P&lt;PRANAIR&lt;JOSYULA&lt;&lt;PRANATHI&lt;&lt;PRODUCT&lt;MANAGER&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;</div>
+        </div>
+        <div class="race">
+          <div class="lbl" style="color:var(--dim)">Race day</div>
+          <div class="bib">
+            <span class="pin" style="top:12px;left:12px"></span><span class="pin" style="top:12px;right:12px"></span><span class="pin" style="bottom:12px;left:12px"></span><span class="pin" style="bottom:12px;right:12px"></span>
+            <div class="band" id="raceName">[YOUR RACE NAME] · 42.2 KM</div>
+            <div class="num"><b id="bibNo">[BIB]</b><div class="lbl" style="margin-top:10px;color:#5A5C63;font-size:12px" id="bibSub">Pranathi · Hyderabad</div></div>
+          </div>
+          <div class="rstats">
+            <div><span class="lbl">Races</span><p id="races">[ADD]</p></div>
+            <div><span class="lbl">Best time</span><p id="best">[ADD]</p></div>
+            <div><span class="lbl">Next race</span><p id="nextRace">[ADD]</p></div>
+          </div>
+          <p style="margin:0;font-size:15px;line-height:1.55;color:var(--muted)" id="raceLine">Long runs taught me pacing: steady releases beat sprint-and-crash.</p>
+        </div>
+      </div>
+
+      <div style="margin-top:72px" id="studio">
+        <div class="sechead" style="margin-bottom:0">
+          <div><div class="lbl">From the studio</div><h3 style="margin:10px 0 0;font:700 30px var(--display)">The other thing I make.</h3></div>
+          <span style="font-size:14px;color:var(--muted)" id="artLine">[A line about your art: medium, what you love painting]</span>
+        </div>
+        <div class="art" id="art"></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="how" class="sec bt lockable locked" data-tier="1">
+    <div class="wrap inner">
+      <div class="lbl" style="color:var(--dim)">How I think</div>
+      <h2 class="h2" style="margin-top:10px;max-width:900px">Find the gap. Prove it's real. Ship it. Make it spread.</h2>
+      <ol class="steps">
+        <li><div class="n">01 · LISTEN</div><h3>Gaps come from the field</h3><p>Reconciliation started with three airline clients stuck on manual workarounds. The Concierge App came from seeing station teams at Vivo Energy work without live data.</p></li>
+        <li><div class="n">02 · VALIDATE</div><h3>Check it's not one client's wish</h3><p>Before building reconciliation, I tested demand across airline, retail and hospitality accounts, so one loud request doesn't set the roadmap.</p></li>
+        <li><div class="n">03 · PRIORITISE</div><h3>Impact, usage, cost, feasibility</h3><p>That's how I sequenced 125 platform optimisations in 11 months, with KPIs and OKRs tracked through launch and adoption.</p></li>
+        <li><div class="n">04 · SPREAD</div><h3>Shipped is the start</h3><p>Adoption is the goal: reconciliation reached 11 clients and became a licence revenue stream.</p></li>
+      </ol>
+      <p class="team"><b>How I run a squad:</b> I own the roadmap and backlog for 10 GRAVTY modules, and co-own the core ones (Tier Management, Co-branded Cards, Subscriptions, Choice Privileges, Blueprint Setup, Finance Connect) with the PM Director. I facilitate Scrum ceremonies in Jira and Confluence, and have mentored two Associate PMs through their releases.</p>
+    </div>
+    <div class="lockcard"><div><span class="lbl" style="color:#C9CED6">Silver perk</span><p>Open 2 boarding passes to unlock how I think about products.</p><a class="btn" href="#work">Go to flights</a></div></div>
+  </section>
+
+  <section id="references" class="sec bt lockable locked" data-tier="2">
+    <div class="wrap inner">
+      <div class="lbl" style="color:var(--dim)">References</div>
+      <h2 class="h2" style="margin-top:10px">What my crew says.</h2>
+      <div class="quotes" id="quotes"></div>
+    </div>
+    <div class="lockcard"><div><span class="lbl" style="color:#F2C14E">Gold perk</span><p>Open 5 boarding passes to unlock what people I've worked with say.</p><a class="btn" href="#work">Go to flights</a></div></div>
+  </section>
+
+  <section id="toolkit" class="sec bt">
+    <div class="wrap">
+      <div class="lbl" style="color:var(--dim)">Carry-on</div>
+      <h2 class="h2" style="margin-top:10px">What I pack for every product.</h2>
+      <div class="tags">
+        <div class="tag"><span class="hole"></span><div class="lbl">Product</div><ul><li>Strategy &amp; roadmap</li><li>Discovery &amp; research</li><li>Business cases</li><li>PRDs &amp; user stories</li><li>Prioritisation</li><li>KPIs / OKRs</li><li>Go-to-market</li><li>0 → 1</li></ul></div>
+        <div class="tag"><span class="hole"></span><div class="lbl">Execution</div><ul><li>Product Owner</li><li>Agile / Scrum</li><li>Release management</li><li>UAT / SIT</li><li>Stakeholder management</li><li>Multi-country launches</li><li>Mentoring</li></ul></div>
+        <div class="tag"><span class="hole"></span><div class="lbl">AI &amp; data</div><ul><li>Generative AI</li><li>Agentic AI</li><li>LLMs</li><li>OCR &amp; multimodal</li><li>Human-in-the-loop</li><li>Conversational AI</li><li>ML personalisation</li><li>NL analytics</li></ul></div>
+        <div class="tag"><span class="hole"></span><div class="lbl">Domains</div><ul><li>Loyalty &amp; rewards</li><li>Fintech &amp; banking</li><li>Co-branded cards</li><li>Subscriptions</li><li>Reconciliation</li><li>B2B SaaS</li><li>KYC &amp; e-invoicing</li></ul></div>
+        <div class="tag"><span class="hole"></span><div class="lbl">Tools</div><ul><li>Jira</li><li>Confluence</li><li>Figma</li><li>Postman</li><li>Claude Code</li><li>MCP</li><li>n8n</li><li>AWS QuickSight</li><li>AWS DMS</li><li>Tableau</li><li>Azure DevOps</li><li>TestRail</li><li>Google Stitch</li></ul></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="rewards" class="sec bt">
+    <div class="wrap">
+      <div class="sechead" style="margin-bottom:18px;align-items:baseline">
+        <h2 style="margin:0;font:700 28px var(--display)">Pran Rewards</h2>
+        <span class="mono" style="font-size:14px;color:var(--muted)" id="nextHint">2,000 miles to Silver</span>
+      </div>
+      <div class="tiers" id="tiers"></div>
+      <div class="plat" id="plat">
+        <div><div class="lbl" style="color:#E8E1FF">Platinum unlocked</div><div style="margin-top:6px;font-size:18px;font-weight:600">You flew every route. Here's the full itinerary.</div></div>
+        <div style="display:flex;gap:10px;flex-wrap:wrap"><a class="btn solid" data-link="resume" href="#contact">Get my resume</a><a class="btn" data-link="calendar" href="#contact">Book a call</a></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact" class="bt">
+    <div class="wrap final">
+      <div class="a">READY FOR TAKE-OFF</div>
+      <h2>Let's build what's next.</h2>
+      <div class="ctas" style="margin-top:40px">
+        <a class="btn solid" data-link="email" href="#contact">Email me</a>
+        <a class="btn" data-link="linkedin" href="#contact">LinkedIn</a>
+        <a class="btn" data-link="github" href="#contact">GitHub</a>
+        <a class="btn" data-link="resume" href="#contact">Resume</a>
+      </div>
+      <p class="contactline" id="contactLine"></p>
+      <div class="foot"><span>PRAN AIR · HYD · BLR · 2026</span><span>PM · MARATHONER · ARTIST</span></div>
+    </div>
+  </section>
+</main>
+
+<dialog class="passdlg" id="passDlg" aria-labelledby="pTitle">
+  <article class="pass" id="passCard" tabindex="-1" autofocus style="outline:none">
+    <div class="pmain" id="pMain">
+      <div class="boarded" id="boarded" aria-hidden="true"><b>BOARDED</b><small>PRAN AIR · <span id="bDate"></span></small></div>
+      <div class="ptop"><b>PRAN AIR</b><span class="lbl r">Boarding pass · Class: Product</span></div>
+      <div class="route">
+        <div><span class="lbl">From</span><p id="pFrom"></p></div>
+        <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="#9A3412" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="m13 6 6 6-6 6"/></svg>
+        <div><span class="lbl">To</span><p id="pTo"></p></div>
+      </div>
+      <div class="pfields">
+        <div><span class="lbl">Passenger</span><p>Pranathi Josyula</p></div>
+        <div><span class="lbl">Flight</span><p class="mono" id="pNo" style="font-weight:700"></p></div>
+        <div><span class="lbl">Gate · clients</span><p id="pClients"></p></div>
+        <div><span class="lbl">Status</span><p class="mono" id="pStatus" style="font-weight:700"></p></div>
+      </div>
+      <div class="story">
+        <div><span class="lbl r">The problem</span><p id="pProblem"></p></div>
+        <div><span class="lbl r">What I did</span><p id="pDid"></p></div>
+      </div>
+      <div class="pmetrics" id="pMetrics"></div>
+      <div id="pExtra"></div>
+    </div>
+    <div class="stub">
+      <div><span class="lbl">Flight</span><div class="no" id="pNo2"></div><div style="margin-top:6px;font-weight:600" id="pTitle"></div></div>
+      <div class="earn"><span class="lbl" id="earnLbl">Miles earned</span><p id="earnVal">+1,000 PRAN MILES</p></div>
+      <div class="barcode" aria-hidden="true"></div>
+      <div class="passnav">
+        <button type="button" class="btn ink" id="prevPass" aria-label="Previous flight">← Prev</button>
+        <button type="button" class="btn ink" id="nextPass" aria-label="Next flight">Next →</button>
+      </div>
+      <button type="button" class="btn ink" id="closePass">Close pass</button>
+    </div>
+  </article>
+</dialog>
+
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+<script>
+/* ============================================================
+   EDIT ME: your links, photos and personal details.
+   Leave a value as '' and the page shows a placeholder.
+   Image paths are relative to this file, e.g. 'images/me.jpg'.
+   ============================================================ */
+const CONFIG = {
+  email: 'pranathijosyula@gmail.com',
+  linkedin: 'https://www.linkedin.com/in/pranathi-josyula-aa1b831b6/',
+  github: 'https://github.com/pran2728',
+  resume: 'Pranathi_Josyula_Resume.pdf',   // upload your resume PDF next to this file with exactly this name
+  calendar: '',         // e.g. a Calendly link
+  heraLink: '',         // e.g. Hera's live app or Instagram link
+  photo: 'pranathi.jpg',   // upload this photo next to index.html with exactly this name
+  race: { name: '', bib: '', races: '', best: '', next: '' },
+  artLine: '',          // one line about your art
+  art: [                // up to 3 pieces; upload each image next to index.html with these exact names
+    { src: 'art-horse.jpg', title: 'Gallop at Dusk', medium: 'Acrylic on canvas' },
+    { src: 'art-unicorn.jpg', title: 'Forest Light', medium: 'Acrylic on canvas' },
+    { src: 'art-starry.jpg', title: 'Starry Night, my way', medium: 'After Van Gogh' }
+  ],
+  quotes: [             // references (unlocked at Gold)
+    { text: '', who: 'A manager you worked with' },
+    { text: '', who: 'A client you shipped for' },
+    { text: '', who: 'An APM you mentored' }
+  ]
+};
+
+const FLIGHTS = [
+  { id: 'reconciliation', no: 'PM101', st: 'landed', cat: 'platform', featured: true,
+    title: 'Automated Reconciliation', from: 'Manual', to: 'Automated',
+    sub: 'An external, manual process turned into a monetised platform feature',
+    mv: '11', ml: 'clients adopted',
+    clients: 'Doters · Riyadh Air · AeroMéxico · GHA',
+    problem: 'Three airline clients relied on external or manual reconciliation. At Doters, each cycle took four people about a month.',
+    did: 'Investigated demand across airline, retail and hospitality accounts, mapped finance workflows, and defined automated processing and exception handling. Then specified Finance Connect, an AWS QuickSight layer giving finance teams self-service balances, billing cycles, outstanding points, accruals and suspension risk.',
+    metrics: [['4 ppl × 1 mo', 'removed per Doters cycle'], ['11', 'clients adopted it'], ['New', 'licence revenue stream']] },
+  { id: 'insights', no: 'PM102', st: 'landed', cat: 'ai', featured: true,
+    title: 'Agentic Insights', from: 'Analyst queues', to: 'Just ask',
+    sub: 'Natural-language analysis of enterprise loyalty data',
+    mv: '90%', ml: 'faster analysis',
+    clients: 'Emirates Skywards · Deutsche Telekom',
+    problem: 'Getting answers from loyalty data meant long, analyst-driven queries.',
+    did: 'Led natural-language analysis of enterprise loyalty data, turning lengthy analyst queries into conversational insights.',
+    metrics: [['90%', 'less analysis time'], ['2', 'enterprise programmes live']] },
+  { id: 'ai-scan', no: 'PM103', st: 'landed', cat: 'ai', featured: true,
+    title: 'AI-Scan', from: 'Paper receipts', to: 'Clean data',
+    sub: 'OCR + LLM receipt reading and fraud checks, with a human in the loop',
+    mv: '~97%', ml: 'extraction accuracy',
+    clients: '2 enterprise clients',
+    problem: 'Receipts and invoices are unstructured and easy to tamper with, so checking them by hand was slow and fraud-prone.',
+    did: 'Ideated and delivered OCR, LLM and multimodal extraction with validation and duplicate checks, fraud and tamper scoring, configurable approve/reject/review routes, audit trails and human oversight.',
+    metrics: [['~97%', 'extraction accuracy'], ['80–90%', 'of receipts automated'], ['2', 'enterprise clients live']] },
+  { id: 'test-ai', no: 'PM104', st: 'landed', cat: 'ai', featured: true,
+    title: 'Agentic Test AI', from: 'Manual QA', to: 'Agent-tested',
+    sub: 'Agentic workflows that take over repetitive offer testing',
+    mv: '~85%', ml: 'less testing effort',
+    clients: 'GRAVTY Offers',
+    problem: 'Offer testing was a bottleneck of repetitive manual quality checks.',
+    did: 'Identified the bottleneck and defined automated, agentic test workflows. The use case won the internal Best Implementation Idea Award 2026.',
+    metrics: [['~85%', 'less offer-testing effort'], ['2026', 'Best Implementation Idea Award']] },
+  { id: 'offerport', no: 'PM105', st: 'landed', cat: 'platform', featured: true,
+    title: 'Offer Blueprints & OfferPort', from: 'Rebuild', to: 'Reuse',
+    sub: 'Reusable offer templates, copied across environments and tenants',
+    mv: '95%', ml: 'fewer config errors',
+    clients: 'GRAVTY clients',
+    problem: 'Rebuilding offers for every environment and tenant was slow, costly and error-prone.',
+    did: 'Helped deliver reusable Offer Blueprints and OfferPort to copy and migrate offer configurations across environments and tenants, and presented the value to clients in enablement sessions.',
+    metrics: [['95%', 'fewer configuration errors'], ['90%', 'shorter launch turnaround'], ['95%', 'less template set-up time']] },
+  { id: 'concierge', no: 'PM106', st: 'landed', cat: 'platform', featured: true,
+    title: 'Concierge App', from: 'Blind spots', to: 'Live view',
+    sub: 'Real-time station and staff performance for programme managers',
+    mv: '25+', ml: 'capabilities',
+    clients: 'Vivo Energy · Emirates · Volaris · GHA · Doters',
+    problem: 'At Vivo Energy, there was no real-time view of station and staff performance, and the team relied on a third-party tool.',
+    did: 'Helped build an in-house app showing sales, redemptions, enrolments and staff-level performance, with on-the-spot membership eligibility checks. It replaced the third-party solution.',
+    metrics: [['25+', 'capabilities delivered'], ['10%', 'ahead of plan on major milestones'], ['4', 'more clients adopted it']] },
+  { id: 'pulsar', no: 'PM107', st: 'boarding', cat: 'ai', featured: true,
+    title: 'Pulsar AI', from: 'Many steps', to: 'One prompt',
+    sub: 'GenAI that creates a complete loyalty offer from a single prompt',
+    mv: '1', ml: 'prompt per offer',
+    clients: 'GRAVTY · in progress',
+    problem: 'Setting up a loyalty offer meant many manual configuration steps.',
+    did: 'Building a GenAI capability that creates a complete loyalty offer end to end from a single prompt, replacing multi-step manual configuration.',
+    metrics: [['1 prompt', 'to a complete offer'], ['In build', 'now boarding']] },
+  { id: 'ai-translate', no: 'PM108', st: 'boarding', cat: 'ai',
+    title: 'AI Translate', from: 'Manual translation', to: 'Any language',
+    sub: 'Translates an entire loyalty programme into a chosen language',
+    mv: 'New', ml: 'markets, without manual translation',
+    clients: 'GRAVTY · in progress',
+    problem: 'Launching in a new market meant translating a whole programme by hand.',
+    did: 'Building an AI capability that translates an entire loyalty programme into a selected language, so clients can launch in new markets without manual translation.',
+    metrics: [['Full', 'programme translated by AI'], ['In build', 'now boarding']] },
+  { id: 'whatsapp', no: 'PM109', st: 'landed', cat: 'ai',
+    title: 'WhatsApp Loyalty Assistant', from: 'App hunting', to: 'One chat',
+    sub: 'Balances, offers and redemptions over WhatsApp',
+    mv: '5M+', ml: 'members',
+    clients: 'Programme of 5M+ members',
+    problem: 'Checking balances, offers and redemptions took members too many steps.',
+    did: 'Delivered a WhatsApp assistant for balances, offers and redemptions. Also contributed to propensity-based purchase and churn targeting, AI-Recommend and AI-Trust fraud capabilities.',
+    metrics: [['5M+', 'programme members'], ['45%', 'faster responses']] },
+  { id: 'gamification', no: 'PM110', st: 'landed', cat: 'platform',
+    title: 'Gamification & Family Management', from: 'Static offers', to: 'Play & win',
+    sub: 'Spin-the-wheel, scratch cards and sweepstakes, plus linked family accounts',
+    mv: '32%', ml: 'higher engagement',
+    clients: 'GRAVTY platform pilots',
+    problem: 'Campaigns leaned on static offers, and households had no way to link their accounts.',
+    did: 'Worked on bringing Play and Win, sweepstakes, spin-the-wheel and scratch cards to the platform, and on Family Management for linked household accounts.',
+    metrics: [['32%', 'higher campaign engagement in pilots']] },
+  { id: 'mashreq', no: 'PM111', st: 'boarding', cat: 'platform',
+    title: 'Mashreq Virtual Loyalty Accounts', from: 'Scattered cards', to: 'One account',
+    sub: 'Many bank accounts and cards under one loyalty account',
+    mv: '5–6M', ml: 'account holders',
+    clients: 'Mashreq Bank',
+    problem: 'Customers with several bank accounts and co-branded cards had fragmented loyalty set-ups and complex migrations.',
+    did: 'Designed the account architecture: one primary member record linked to multiple bank accounts and co-branded cards, with separate balances, generated virtual IDs, card-portfolio migrations, configurable expiry and inactivity rules, and redemption.',
+    metrics: [['5–6M', 'intended account holders'], ['Pre-launch', 'in build now']] },
+  { id: 'five-countries', no: 'PM112', st: 'landed', cat: 'launch',
+    title: '5 Countries in 1 Year', from: 'Scope', to: '5 go-lives',
+    sub: 'I launched the product for Shell · Vivo Energy in Uganda, Ghana, Côte d’Ivoire, Morocco and Mauritius',
+    mv: '5', ml: 'go-lives in 12 months',
+    clients: 'Shell · Vivo Energy',
+    problem: 'Five markets had to go live in parallel, with 5–7 engineers and client teams and no direct reporting authority.',
+    did: 'Owned implementation readiness from commercial scope through requirements, SIT/UAT, sign-off, client training and launch. Prioritised parallel releases, surfaced risks, and cleared integration and production blockers.',
+    metrics: [['5', 'country go-lives in 12 months'], ['5–7', 'engineers coordinated']] },
+  { id: 'quality', no: 'PM113', st: 'landed', cat: 'launch',
+    title: 'Quality Overhaul', from: 'Recurring defects', to: 'Release gates',
+    sub: 'Root-cause routines and release controls across global launches',
+    mv: '60%', ml: 'fewer defects',
+    clients: 'Emirates · WestJet · Jumeirah · GHA · CMR',
+    problem: 'Recurring defects and weak quality gates were slowing major enterprise launches.',
+    did: 'As release coordinator for Emirates, WestJet, Jumeirah, GHA and CMR Foody Rewards, introduced root-cause and corrective-action routines, lifecycle quality checks, release controls and SOPs.',
+    metrics: [['60%', 'fewer defects'], ['20%', 'fewer non-conformance issues'], ['15%', 'less operational downtime']] },
+  { id: 'prototypes', no: 'PM114', st: 'landed', cat: 'built',
+    title: 'Airline App Prototypes', from: 'Ideas', to: '45+ screens',
+    sub: 'Demo-ready Emirates and Qatar Airways app experiences, built with Claude Code + MCP',
+    mv: '45+', ml: 'screens',
+    clients: 'Emirates · Qatar Airways (demos)',
+    problem: 'Clients and engineers needed to see interaction ideas, not read about them.',
+    did: 'Designed demo-ready Emirates and Qatar Airways mobile app experiences with Claude Code and MCP. Also benchmarked airline redemption journeys to define the reward catalogue first rolled out for Emirates Skywards.',
+    metrics: [['45+', 'demo-ready screens'], ['1st', 'reward catalogue rollout, Emirates Skywards']] },
+  { id: 'release-notes', no: 'AGENT', st: 'solo', cat: 'built',
+    title: 'Release Notes Agent', from: '7 days', to: '3.5 hours',
+    sub: 'A Claude agent that drafts release notes from Jira for a 10-PM team',
+    mv: '7d → 3.5h', ml: 'per release',
+    clients: 'Internal · 10-PM team',
+    problem: 'Ten PMs wrote notes for 70+ stories every release. It took seven calendar days.',
+    did: 'Built a Claude-based agent that reads Jira stories through Atlassian and GitHub integrations and drafts the release notes, hosted on Render. Each PM now spends about 20 minutes reviewing.',
+    metrics: [['7d → 3.5h', 'per release'], ['70+', 'stories covered per release'], ['10', 'PMs using it']] },
+  { id: 'hera', no: 'HERA', st: 'solo', cat: 'built', featured: true,
+    title: 'Hera · Built from Scratch', from: 'Blank page', to: 'Hera',
+    sub: 'My own app: an AI companion for women’s health',
+    mv: 'Solo', ml: 'idea to app, end to end',
+    clients: 'Personal project · 2026 to present',
+    problem: 'Questions about periods, pregnancy and menopause deserve a warm, private place to ask. I wanted to build that companion myself.',
+    did: 'Designed and built a consumer AI companion with chat-first cycle logging, proactive reminders, diet-aware suggestions and optional partner nudges, using AI coding agents with React, Supabase, Google AI Studio and Vercel.',
+    metrics: [['Solo', 'designed and built end to end'], ['Chat-first', 'cycle logging'], ['Free', 'for every woman who uses it']] }
+];
+
+const FILTERS = [
+  ['featured', 'Featured'], ['ai', 'AI products'], ['platform', 'Platform & fintech'],
+  ['launch', 'Launches & quality'], ['built', 'Built by me'], ['all', 'All']
+];
+
+const STAMPS = [
+  ['TECH MAHINDRA', 'SUMMER INTERN', '2019', '#1D4ED8', '-6deg', ''],
+  ['LOYALTY JUGGERNAUT', 'PRODUCT SPECIALIST', '2020', '#9A3412', '4deg', ''],
+  ['LJI', 'SR. SPECIALIST', '2023', '#15803D', '-3deg', 'round'],
+  ['LJI', 'BD LEAD', '2024', '#7E22CE', '7deg', ''],
+  ['LJI', 'PRODUCT MANAGER', '2025', '#B91C1C', '-5deg', ''],
+  ['IIT MADRAS', 'MBA', '2026', '#0F766E', '3deg', 'round']
+];
+
+const CLIENTS = ['Emirates', 'Riyadh Air', 'Mashreq Bank', 'Shell · Vivo Energy', 'Deutsche Telekom', 'AeroMéxico', 'Doters', 'Jumeirah', 'WestJet', 'Global Hotel Alliance', 'Volaris', 'CMR Foody Rewards'];
+
+const TIERS = [
+  { name: 'Blue', min: 0, color: '#8AB4FF', perk: 'Welcome aboard' },
+  { name: 'Silver', min: 2000, color: '#C9CED6', perk: 'Unlocks: how I think' },
+  { name: 'Gold', min: 5000, color: '#F2C14E', perk: 'Unlocks: references' },
+  { name: 'Platinum', min: 8000, color: '#E8E1FF', perk: 'Unlocks: resume + call' }
+];
+
+/* Anything left empty above is hidden or replaced, so the live site never shows placeholders. */
+const HAS_REFS = CONFIG.quotes.some(q => q.text && q.text.trim());
+if (!HAS_REFS) {
+  const refs = document.getElementById('references');
+  if (refs) refs.remove();
+  TIERS[2].perk = 'Halfway to Platinum';
+}
+
+/* ---------- helpers ---------- */
+const $ = (s, el = document) => el.querySelector(s);
+const el = (tag, attrs = {}, kids = []) => {
+  const n = document.createElement(tag);
+  for (const [k, v] of Object.entries(attrs)) {
+    if (k === 'class') n.className = v;
+    else if (k === 'text') n.textContent = v;
+    else if (k === 'style') n.style.cssText = v;
+    else if (k.startsWith('on')) n.addEventListener(k.slice(2), v);
+    else n.setAttribute(k, v);
+  }
+  [].concat(kids).forEach(k => k != null && n.append(k));
+  return n;
+};
+const store = {
+  get(k, d) { try { const v = localStorage.getItem('pranair:' + k); return v ? JSON.parse(v) : d; } catch (e) { return d; } },
+  set(k, v) { try { localStorage.setItem('pranair:' + k, JSON.stringify(v)); } catch (e) {} }
+};
+const reduced = window.matchMedia && matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+/* ---------- state ---------- */
+let visited = store.get('visited', {});
+let skipped = store.get('skipped', false);
+let current = -1;
+let lastTier = -1;
+
+/* ---------- clock ---------- */
+function tickClock() {
+  try {
+    const t = new Date().toLocaleTimeString('en-GB', { hour: '2-digit', minute: '2-digit', timeZone: 'Asia/Kolkata' });
+    $('#clock').textContent = t;
+    document.querySelectorAll('.js-clock').forEach(n => n.textContent = t);
+  } catch (e) {}
+}
+
+/* ---------- ticker ---------- */
+function buildTicker() {
+  const t = $('#ticker');
+  CLIENTS.concat(CLIENTS).forEach((c, i) => {
+    const s = el('span', { text: c });
+    if (i >= CLIENTS.length) s.setAttribute('aria-hidden', 'true');
+    t.append(s);
+  });
+}
+
+/* ---------- flights ---------- */
+function pillFor(f) {
+  if (f.st === 'boarding') return ['pill boarding', 'IN BUILD'];
+  if (visited[f.id]) return ['pill viewed', 'VIEWED'];
+  if (f.st === 'solo') return ['pill solo', 'SOLO BUILD'];
+  return ['pill landed', 'LANDED'];
+}
+let activeFilter = 'featured';
+function inFilter(f, key) { return key === 'all' || (key === 'featured' ? f.featured : f.cat === key); }
+function visibleIdx() { return FLIGHTS.map((f, i) => i).filter(i => inFilter(FLIGHTS[i], activeFilter)); }
+function applyFilter(key, animate) {
+  activeFilter = key;
+  document.querySelectorAll('#flights li').forEach((li, i) => { li.hidden = !inFilter(FLIGHTS[i], key); });
+  document.querySelectorAll('.fbtn').forEach(b => b.setAttribute('aria-pressed', String(b.dataset.key === key)));
+  $('#flightCount').textContent = String(visibleIdx().length).padStart(2, '0');
+  if (animate) flapBoard();
+}
+function buildFilters() {
+  const box = $('#filters');
+  FILTERS.forEach(([key, label]) => {
+    const n = FLIGHTS.filter(f => inFilter(f, key)).length;
+    box.append(el('button', { type: 'button', class: 'fbtn', 'data-key': key, 'aria-pressed': 'false', onclick: () => applyFilter(key, true) },
+      [label, el('small', { text: String(n) })]));
+  });
+}
+function buildFlights() {
+  const list = $('#flights');
+  FLIGHTS.forEach((f, i) => {
+    const code = el('span', { class: 'code', 'aria-hidden': 'true' }, [...f.no].map(ch => el('span', { class: 'flap', 'data-ch': ch, text: ch })));
+    const [pc, pt] = pillFor(f);
+    const btn = el('button', {
+      type: 'button', class: 'frow' + (f.id === 'hera' ? ' hera' : ''), 'aria-label': `Flight ${f.no}: ${f.title}. View boarding pass`,
+      onclick: () => openPass(i)
+    }, [
+      code,
+      el('span', { class: 'fmain' }, [el('span', { class: 'ftitle', text: f.title }), el('span', { class: 'fsub', text: f.sub })]),
+      el('span', { class: 'fmetric' }, [el('span', { class: 'fv', text: f.mv }), el('span', { class: 'fl', text: f.ml })]),
+      el('span', { class: pc, 'data-pill': f.id }, [el('span', { class: 'dot' }), pt]),
+      el('span', { class: 'cta' }, ['View pass', el('span', { 'aria-hidden': 'true', text: '→' })])
+    ]);
+    list.append(el('li', {}, btn));
+  });
+}
+function refreshPills() {
+  FLIGHTS.forEach(f => {
+    const p = document.querySelector(`[data-pill="${f.id}"]`);
+    if (!p) return;
+    const [pc, pt] = pillFor(f);
+    p.className = pc;
+    p.lastChild.textContent = pt;
+  });
+}
+function flapBoard() {
+  if (reduced) return;
+  const chars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789';
+  const flaps = [...document.querySelectorAll('#flights li:not([hidden]) .code')].map((c, r) => [...c.children].map((s, i) => ({ s, r, i })));
+  let frame = 0;
+  const timer = setInterval(() => {
+    frame++;
+    flaps.flat().forEach(({ s, r, i }) => {
+      const settle = 4 + r * 4 + i * 2 + ((r * 7 + i * 13) % 4);
+      if (frame >= settle) { s.textContent = s.dataset.ch; s.classList.remove('flip'); }
+      else { s.textContent = chars[Math.floor(Math.random() * chars.length)]; s.classList.add('flip'); }
+    });
+    if (frame > 60) clearInterval(timer);
+  }, 45);
+}
+
+/* ---------- passport ---------- */
+function buildPassport() {
+  const box = $('#stamps');
+  STAMPS.forEach(([org, role, year, ink, rot, shape]) => {
+    box.append(el('span', { class: 'stamp' + (shape ? ' ' + shape : ''), style: `color:${ink};--r:${rot}` },
+      [el('small', { text: org }), el('span', { text: role }), el('b', { text: year })]));
+  });
+  const ph = $('#photo');
+  ph.textContent = '';
+  if (CONFIG.photo) {
+    ph.classList.add('has');
+    ph.append(el('img', { src: CONFIG.photo, alt: 'Pranathi Josyula' }));
+    const mono = $('.pn-mono');
+    if (mono) { mono.firstChild.textContent = ''; mono.prepend(el('img', { src: CONFIG.photo, alt: '' })); }
+  } else {
+    ph.classList.add('mono');
+    ph.setAttribute('aria-hidden', 'true');
+    ph.textContent = 'PJ';
+  }
+  const r = CONFIG.race;
+  $('#raceName').textContent = r.name ? r.name.toUpperCase() + ' · 42.2 KM' : 'MARATHONER · HYD';
+  $('#bibNo').textContent = r.bib || '42.2';
+  if (!r.bib) $('#bibSub').textContent = 'KM · Pranathi';
+  [['#races', r.races], ['#best', r.best], ['#nextRace', r.next]].forEach(([id, v]) => {
+    if (v) $(id).textContent = v; else $(id).parentElement.remove();
+  });
+  if (!r.races && !r.best && !r.next) $('.rstats').remove();
+  const studio = $('#studio');
+  if (!CONFIG.art.some(a => a.src)) { studio.remove(); } else {
+  if (CONFIG.artLine) $('#artLine').textContent = CONFIG.artLine; else $('#artLine').remove();
+  const art = $('#art');
+  const tilts = ['-1.2deg', '.8deg', '-.6deg'];
+  CONFIG.art.slice(0, 3).forEach((a, i) => {
+    const inner = a.src ? el('img', { src: a.src, alt: a.title ? `${a.title}, artwork by Pranathi` : 'Artwork by Pranathi', loading: 'lazy' })
+                        : null;
+    if (!inner) return;
+    const cap = [a.title, a.medium].filter(Boolean).join(' · ').toUpperCase();
+    art.append(el('figure', { style: `transform:rotate(${tilts[i]})${i === 1 ? ';margin-top:28px' : ''}` }, [
+      el('div', { class: 'frame' }, inner),
+      cap ? el('figcaption', { text: cap }) : null
+    ]));
+  });
+  }
+  const q = $('#quotes');
+  if (q) CONFIG.quotes.filter(x => x.text && x.text.trim()).forEach(x => q.append(el('blockquote', {}, [
+    el('p', { text: `“${x.text}”` }),
+    el('cite', { text: (x.who || '').toUpperCase() })
+  ])));
+}
+
+/* ---------- links ---------- */
+function wireLinks() {
+  const map = {
+    email: CONFIG.email ? 'mailto:' + CONFIG.email : '',
+    linkedin: CONFIG.linkedin, github: CONFIG.github, resume: CONFIG.resume, calendar: CONFIG.calendar || (CONFIG.email ? 'mailto:' + CONFIG.email + '?subject=Let%27s%20talk' : '')
+  };
+  document.querySelectorAll('[data-link]').forEach(a => {
+    const href = map[a.dataset.link];
+    if (href) {
+      a.href = href;
+      if (/^https?:/.test(href)) { a.target = '_blank'; a.rel = 'noopener'; }
+    } else {
+      a.hidden = true;
+    }
+  });
+  if (CONFIG.email) $('#contactLine').textContent = CONFIG.email; else $('#contactLine').remove();
+}
+
+/* ---------- rewards ---------- */
+function tierIndex(miles) { let t = 0; TIERS.forEach((x, i) => { if (miles >= x.min) t = i; }); return t; }
+function renderRewards(announce) {
+  const miles = Object.keys(visited).length * 1000;
+  const ti = skipped ? 3 : tierIndex(miles);
+  const cur = TIERS[ti], next = TIERS[tierIndex(miles) + 1];
+  document.querySelectorAll('.js-miles').forEach(n => n.textContent = miles.toLocaleString('en-IN'));
+  document.querySelectorAll('.js-tier').forEach(chip => { chip.textContent = cur.name.toUpperCase(); chip.style.background = cur.color; });
+  const bars = document.querySelectorAll('.js-bar');
+  const pct = skipped || !next ? 100 : Math.round(((miles - TIERS[tierIndex(miles)].min) / (next.min - TIERS[tierIndex(miles)].min)) * 100);
+  bars.forEach(bar => { bar.style.width = pct + '%'; bar.style.background = cur.color; });
+  $('#nextHint').textContent = skipped ? 'All perks unlocked' : (next ? `${(next.min - miles).toLocaleString('en-IN')} miles to ${next.name}` : 'Top tier reached');
+  const tiers = $('#tiers');
+  tiers.textContent = '';
+  TIERS.forEach((t, i) => tiers.append(el('div', { class: 'tier' + (i <= ti ? ' on' : '') }, [
+    el('div', { class: 'tier-h' }, [el('i', { style: `background:${t.color}` }), el('span', { class: 'lbl', style: 'font-weight:700', text: t.name })]),
+    el('p', { text: t.perk })
+  ])));
+  document.querySelectorAll('.lockable').forEach(s => {
+    const need = Number(s.dataset.tier);
+    const open = ti >= need;
+    s.classList.toggle('locked', !open);
+    const inner = s.querySelector('.inner');
+    if (open) inner.removeAttribute('inert'); else inner.setAttribute('inert', '');
+  });
+  $('#plat').classList.toggle('show', ti === 3);
+  if (announce && lastTier !== -1 && ti > lastTier) {
+    const perk = { 1: 'How I think unlocked', 2: HAS_REFS ? 'References unlocked' : 'halfway to Platinum', 3: 'Resume + call unlocked' }[ti];
+    toast(`Welcome to ${cur.name} · ${perk}`);
+  }
+  lastTier = ti;
+}
+
+/* ---------- toast ---------- */
+let toastTimer;
+function toast(msg) {
+  const t = $('#toast');
+  // a modal dialog sits above the page, so show the toast inside it while it's open
+  const host = dlg.open ? dlg : document.body;
+  if (t.parentNode !== host) host.append(t);
+  t.textContent = msg;
+  t.classList.add('show');
+  clearTimeout(toastTimer);
+  toastTimer = setTimeout(() => t.classList.remove('show'), 2600);
+}
+
+/* ---------- boarding pass ---------- */
+const dlg = $('#passDlg');
+function fillPass(i, isNew) {
+  const f = FLIGHTS[i];
+  const no = f.id === 'hera' ? 'HERA' : f.no.slice(0, 2) + ' ' + f.no.slice(2);
+  $('#pFrom').textContent = f.from;
+  $('#pTo').textContent = f.to;
+  $('#pNo').textContent = no;
+  $('#pNo2').textContent = no;
+  $('#pClients').textContent = f.clients;
+  $('#pStatus').textContent = { landed: 'Landed', boarding: 'In build', solo: 'Solo build' }[f.st];
+  $('#pProblem').textContent = f.problem;
+  $('#pDid').textContent = f.did;
+  $('#pTitle').textContent = f.title;
+  const m = $('#pMetrics');
+  m.textContent = '';
+  f.metrics.forEach(([v, l]) => m.append(el('div', {}, [el('b', { text: v }), el('span', { text: l })])));
+  const extra = $('#pExtra');
+  extra.textContent = '';
+  if (f.id === 'hera' && CONFIG.heraLink) {
+    extra.append(el('a', { class: 'btn ink', href: CONFIG.heraLink, target: '_blank', rel: 'noopener', style: 'margin-top:20px', text: 'Try Hera →' }));
+  }
+  $('#earnLbl').textContent = isNew ? 'Miles earned' : 'Already flown';
+  $('#earnVal').textContent = isNew ? '+1,000 PRAN MILES' : 'No new miles';
+  // replay the print animation
+  const card = $('#passCard');
+  card.scrollTop = 0;
+  card.style.animation = 'none'; void card.offsetWidth; card.style.animation = '';
+  // BOARDED stamp + torn stub: animated the first time, already there on a revisit
+  const stamp = $('#boarded'), main = $('#pMain');
+  try { $('#bDate').textContent = new Date().toLocaleDateString('en-GB', { day: '2-digit', month: 'short', year: 'numeric' }).toUpperCase(); } catch (e) {}
+  stamp.classList.remove('show', 'slam');
+  main.classList.remove('thud');
+  card.classList.remove('torn', 'tearing');
+  void card.offsetWidth;
+  stamp.classList.add('show');
+  if (isNew && !reduced) {
+    stamp.classList.add('slam');
+    main.classList.add('thud');
+    card.classList.add('tearing');
+    requestAnimationFrame(() => card.classList.add('torn'));
+  } else {
+    card.classList.add('torn');
+  }
+}
+function openPass(i) {
+  current = i;
+  const f = FLIGHTS[i];
+  const isNew = !visited[f.id];
+  if (isNew) { visited[f.id] = true; store.set('visited', visited); }
+  fillPass(i, isNew);
+  if (!dlg.open) {
+    if (typeof dlg.showModal === 'function') dlg.showModal(); else dlg.setAttribute('open', '');
+  }
+  try { history.replaceState(null, '', '#' + f.id); } catch (e) {}
+  if (isNew) {
+    refreshPills();
+    renderRewards(true);
+    if (!document.querySelector('.toast.show')) toast('+1,000 Pran Miles');
+  }
+}
+function closePass() {
+  if (typeof dlg.close === 'function') dlg.close(); else dlg.removeAttribute('open');
+}
+dlg.addEventListener('close', () => { try { history.replaceState(null, '', '#work'); } catch (e) {} });
+dlg.addEventListener('click', e => { if (e.target === dlg) closePass(); });
+$('#closePass').addEventListener('click', closePass);
+function stepPass(dir) {
+  let list = visibleIdx();
+  if (!list.includes(current)) list = FLIGHTS.map((f, i) => i);
+  const at = list.indexOf(current);
+  openPass(list[(at + dir + list.length) % list.length]);
+}
+$('#prevPass').addEventListener('click', () => stepPass(-1));
+$('#nextPass').addEventListener('click', () => stepPass(1));
+$('#skipGame').addEventListener('click', () => { skipped = true; store.set('skipped', true); renderRewards(false); toast('Everything unlocked · enjoy the flight'); });
+
+/* ---------- 3D tilt on hover (mouse only) ---------- */
+const canTilt = !reduced && window.matchMedia && matchMedia('(hover: hover) and (pointer: fine)').matches;
+function addTilt(node, max, opts = {}) {
+  if (!canTilt || !node) return;
+  if (opts.shine !== false) node.append(el('span', { class: 'shine', 'aria-hidden': 'true' }));
+  const base = opts.base || '', lift = opts.lift || '';
+  node.addEventListener('pointermove', e => {
+    if (e.pointerType !== 'mouse') return;
+    const r = node.getBoundingClientRect();
+    const x = (e.clientX - r.left) / r.width, y = (e.clientY - r.top) / r.height;
+    node.style.transition = 'transform .08s linear, border-color .2s, background .2s';
+    node.style.transform = `perspective(1000px) ${base} rotateX(${((0.5 - y) * max * 2).toFixed(2)}deg) rotateY(${((x - 0.5) * max * 2).toFixed(2)}deg) ${lift}`;
+    node.style.setProperty('--mx', (x * 100).toFixed(1) + '%');
+    node.style.setProperty('--my', (y * 100).toFixed(1) + '%');
+    node.classList.add('tilting');
+  });
+  node.addEventListener('pointerleave', () => {
+    node.style.transition = 'transform .5s cubic-bezier(.2,.8,.2,1), border-color .2s, background .2s';
+    node.style.transform = '';
+    node.classList.remove('tilting');
+  });
+}
+
+/* ---------- flight path: the plane follows your scroll ---------- */
+const FP_STOPS = [['impact', 'Impact'], ['work', 'Work'], ['about', 'About'], ['how', 'How I think'], ['references', 'References'], ['toolkit', 'Toolkit'], ['rewards', 'Rewards'], ['contact', 'Contact']].filter(([id]) => document.getElementById(id));
+const fp = $('#fp');
+const fpStops = FP_STOPS.map(([id, label]) => {
+  const a = el('a', { class: 'fp-wp', href: '#' + id, tabindex: '-1' }, [el('i'), el('span', { text: label })]);
+  fp.append(a);
+  return { a, id };
+});
+let fpMax = 1;
+function layoutPath() {
+  fpMax = Math.max(1, document.documentElement.scrollHeight - innerHeight);
+  fpStops.forEach(s => {
+    const sec = document.getElementById(s.id);
+    const top = sec.getBoundingClientRect().top + scrollY - 90;
+    s.p = Math.min(1, Math.max(0, top / fpMax));
+    s.a.style.top = (s.p * 100) + '%';
+  });
+  movePlane();
+}
+let fpTick = false;
+function movePlane() {
+  fpTick = false;
+  const p = Math.min(1, Math.max(0, scrollY / fpMax));
+  const pct = (p * 100).toFixed(2) + '%';
+  $('#fpPlane').style.top = pct;
+  $('#fpDone').style.height = pct;
+  document.querySelectorAll('.hplane').forEach(n => n.style.left = pct);
+  document.querySelectorAll('.hdone').forEach(n => n.style.width = pct);
+  trackSection();
+  fp.classList.toggle('landed', p > 0.985);
+  fpStops.forEach(s => {
+    s.a.classList.toggle('reached', p >= s.p - 0.002);
+    s.a.classList.toggle('near', Math.abs(p - s.p) < 0.03);
+  });
+}
+addEventListener('scroll', () => { if (!fpTick) { fpTick = true; requestAnimationFrame(movePlane); } }, { passive: true });
+addEventListener('resize', layoutPath);
+addEventListener('load', layoutPath);
+if (document.fonts && document.fonts.ready) document.fonts.ready.then(layoutPath);
+
+/* ---------- split-flap text ---------- */
+const FLAP_CHARS = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789';
+function makeTiles(box, len) {
+  box.textContent = '';
+  box._tiles = [];
+  for (let i = 0; i < len; i++) { const s = el('span', { class: 't', text: ' ' }); box.append(s); box._tiles.push(s); }
+  return box._tiles;
+}
+function flapTo(box, word, opts = {}) {
+  const tiles = box._tiles, len = tiles.length;
+  const target = (word + ' '.repeat(len)).slice(0, len);
+  const put = (s, ch) => { s.textContent = ch === ' ' ? ' ' : ch; };
+  clearInterval(box._timer);
+  if (reduced || opts.instant) { tiles.forEach((s, i) => { put(s, target[i]); s.classList.remove('flip'); }); return; }
+  const spins = opts.spins ?? 5, stagger = opts.stagger ?? 1.5, delay = opts.delay ?? 0;
+  let f = 0;
+  box._timer = setInterval(() => {
+    f++;
+    let done = true;
+    tiles.forEach((s, i) => {
+      if (f >= delay + spins + i * stagger) { put(s, target[i]); s.classList.remove('flip'); }
+      else { done = false; if (f >= delay) { s.textContent = FLAP_CHARS[(Math.random() * FLAP_CHARS.length) | 0]; s.classList.add('flip'); } }
+    });
+    if (done) clearInterval(box._timer);
+  }, 40);
+}
+
+/* ---------- header: gates, "now at", shrinking pill ---------- */
+const SECS = [['impact', 'IMPACT'], ['work', 'WORK'], ['about', 'ABOUT'], ['how', 'HOW I THINK'], ['references', 'REFERENCES'], ['toolkit', 'TOOLKIT'], ['rewards', 'REWARDS'], ['contact', 'CONTACT']].filter(([id]) => document.getElementById(id));
+document.querySelectorAll('.gate').forEach(g => {
+  const box = g.querySelector('.tiles');
+  makeTiles(box, box.dataset.word.length);
+  flapTo(box, box.dataset.word, { instant: true });
+  const spin = () => flapTo(box, box.dataset.word, { spins: 4, stagger: 1 });
+  g.addEventListener('mouseenter', spin);
+  g.addEventListener('focus', spin);
+});
+document.querySelectorAll('.nowat').forEach(b => { makeTiles(b, 11); flapTo(b, 'CHECK-IN', { instant: true }); });
+
+let curSec = null;
+function trackSection() {
+  let now = '';
+  const line = innerHeight * 0.35;
+  for (const [id] of SECS) { if (document.getElementById(id).getBoundingClientRect().top <= line) now = id; }
+  if (scrollY >= fpMax - 4) now = 'contact';
+  // pill appears once the full header has scrolled away
+  const pn = $('#pnav');
+  const show = scrollY > $('.top').offsetHeight + 40;
+  if (show !== pn.classList.contains('show')) {
+    pn.classList.toggle('show', show);
+    if (show) pn.removeAttribute('inert'); else pn.setAttribute('inert', '');
+  }
+  if (now === curSec) return;
+  curSec = now;
+  const word = now ? SECS.find(s => s[0] === now)[1] : 'CHECK-IN';
+  document.querySelectorAll('.nowat').forEach(b => flapTo(b, word));
+  document.querySelectorAll('.gate').forEach(g => {
+    const on = g.dataset.sec === now;
+    g.classList.toggle('active', on);
+    if (on) g.setAttribute('aria-current', 'location'); else g.removeAttribute('aria-current');
+    g.querySelector('small').textContent = on ? 'BOARDING' : g.dataset.label;
+  });
+}
+
+/* ---------- departures-board menu ---------- */
+const bm = $('#boardMenu');
+const bmRows = SECS.map(([id, word], i) => {
+  const dest = el('span', { class: 'tiles', 'aria-hidden': 'true' });
+  makeTiles(dest, 11);
+  const st = el('span', { class: 'bm-st' }, [el('span', { class: 'dot' }), el('span', { text: 'ON TIME' })]);
+  const a = el('a', { class: 'bm-row', href: '#' + id, 'aria-label': word.charAt(0) + word.slice(1).toLowerCase() }, [
+    el('span', { class: 'bm-fl', text: 'PJ 0' + (i + 1) }), dest, el('span', { class: 'bm-gate', text: 'GATE 0' + (i + 1) }), st
+  ]);
+  a.addEventListener('click', e => {
+    e.preventDefault();
+    bm.close();
+    document.getElementById(id).scrollIntoView({ behavior: reduced ? 'auto' : 'smooth' });
+    try { history.replaceState(null, '', '#' + id); } catch (err) {}
+  });
+  $('#bmList').append(el('li', {}, a));
+  return { id, word, dest, st };
+});
+function openMenu() {
+  bmRows.forEach((r, i) => {
+    const locked = document.getElementById(r.id).classList.contains('locked');
+    const [cls, text] = r.id === curSec ? ['bm-st here', 'NOW HERE'] : locked ? ['bm-st locked', 'LOCKED'] : r.id === 'contact' ? ['bm-st final', 'FINAL CALL'] : ['bm-st', 'ON TIME'];
+    r.st.className = cls;
+    r.st.lastChild.textContent = text;
+    flapTo(r.dest, '', { instant: true });
+  });
+  if (typeof bm.showModal === 'function') bm.showModal(); else bm.setAttribute('open', '');
+  bmRows.forEach((r, i) => flapTo(r.dest, r.word, { delay: i * 3, spins: 6, stagger: 1.2 }));
+}
+document.querySelectorAll('.js-menu').forEach(b => b.addEventListener('click', openMenu));
+$('#bmClose').addEventListener('click', () => bm.close());
+
+/* ---------- boot ---------- */
+buildTicker();
+buildFlights();
+buildFilters();
+applyFilter('featured', false);
+buildPassport();
+wireLinks();
+renderRewards(false);
+tickClock(); setInterval(tickClock, 15000);
+
+// flap the board and stamp the passport when they scroll into view
+if ('IntersectionObserver' in window) {
+  const once = (node, fn) => {
+    const io = new IntersectionObserver(es => { if (es.some(e => e.isIntersecting)) { io.disconnect(); fn(); } }, { threshold: 0.25 });
+    io.observe(node);
+  };
+  once($('#flights'), flapBoard);
+  once($('#stamps'), () => [...document.querySelectorAll('.stamp')].forEach((s, i) => setTimeout(() => s.classList.add('in'), reduced ? 0 : i * 180)));
+} else {
+  document.querySelectorAll('.stamp').forEach(s => s.classList.add('in'));
+}
+
+// tilt targets
+document.querySelectorAll('.frow').forEach(n => addTilt(n, 3, { lift: 'translateY(-2px)' }));
+addTilt($('.passport'), 3);
+addTilt($('.bib'), 7, { base: 'rotate(-2deg)' });
+document.querySelectorAll('.frame').forEach(n => addTilt(n, 8));
+document.querySelectorAll('.tag').forEach((n, i) => addTilt(n, 6, { base: i % 2 ? 'rotate(1deg)' : 'rotate(-1deg)' }));
+addTilt($('#passCard'), 2.5, { shine: false });
+layoutPath();
+
+// deep link: #reconciliation, #hera ... opens that pass
+function passFromHash() {
+  const i = FLIGHTS.findIndex(f => f.id === location.hash.slice(1));
+  if (i >= 0 && !inFilter(FLIGHTS[i], activeFilter)) applyFilter('all', false);
+  if (i >= 0 && !(dlg.open && current === i)) openPass(i);
+}
+window.addEventListener('hashchange', passFromHash);
+passFromHash();
+</script>
+</body>
+</html>
